@@ -1,6 +1,6 @@
 import requests, zipfile, io, xlrd
 from bs4 import BeautifulSoup
-
+from tickers import getTickers
 
 def getInfo(ticker = None):
     """
@@ -70,3 +70,22 @@ def getInfo(ticker = None):
         if isinstance(ticker, list):
             return [info[t[:4]] for t in ticker]
     return info
+
+def getSetor():
+    tickers = list(getTickers())
+
+    info = getInfo()
+    aux_list = []
+    for ticker in tickers:
+        try:
+            info_ticker = info[ticker[:4]]
+        except:
+            info_ticker = ['', '', '']
+        aux_dict = {}
+        aux_dict['ticker'] = ticker
+        aux_dict['setor'] = info_ticker[0]
+        aux_dict['subsetor'] = info_ticker[1]
+        aux_dict['segmento'] = info_ticker[2]
+        aux_list.append(aux_dict)
+
+    return aux_list

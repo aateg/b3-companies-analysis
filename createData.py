@@ -1,12 +1,8 @@
-from crawlers.fundamentus import Fundamentus
+from crawlers.fundamentus import getFundamentus
+from crawlers.info import getSetor
 import pandas as pd
 
-def getFundamentus(data='balanco'):
-    f = Fundamentus()
-    info = getInfo()
-    f.get(table=data)
+def createData():
+    f = getFundamentus('balanco')
 
-    data = f.data
-
-def getInfo():
-    pass
+    s = getSetor()
