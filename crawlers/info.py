@@ -1,6 +1,6 @@
 import requests, zipfile, io, xlrd
 from bs4 import BeautifulSoup
-from tickers import getTickers
+from crawlers.tickers import getTickers
 
 def getInfo(ticker = None):
     """

@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
-from tickers import getTickers
-from info import getInfo
+from crawlers.tickers import getTickers
+from crawlers.info import getInfo
 
 def getFundamentus(table='fundamentalista'):
     base_url = 'https://www.fundamentus.com.br/detalhes.php?papel='
