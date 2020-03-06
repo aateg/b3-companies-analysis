@@ -13,8 +13,8 @@ def createData():
     #balance_data = pd.DataFrame(f)
     #sector_data = pd.DataFrame(s)
     
-    #balance_data.to_csv('./data/balanco.csv')
-    #sector_data.to_csv('./data/setor.csv')
+    #balance_data.to_csv('./data/balanco.csv', index = False)
+    #sector_data.to_csv('./data/setor.csv', index = False)
     
     balance_data = pd.read_csv('./data/balanco.csv')
     sector_data = pd.read_csv('./data/setor.csv')
